@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { changeUsername, changeEmail, changePassword, signupUser } 
 from "./signupSlice";
 import Navbar from "../../components/navbar/navbar";
-
+import styles from './signup.module.css';
 
 export default function Signup() {
 
@@ -18,31 +18,38 @@ export default function Signup() {
 
     return (
     <>
-        <Navbar/>
-        
-        <form onSubmit={SubmitSignupForm}>
+    <Navbar />
+
+    <div className={styles.container}>
+        <form onSubmit={SubmitSignupForm} className={styles.form}>
             
-            <h1>Signup Form</h1>
+            <h1 className={styles.title}>Signup</h1>
+
             <input
+                className={styles.input}
                 value={state.username}
                 onChange={(e) => dispatch(changeUsername(e.target.value))}
-                placeholder="username"
+                placeholder="Username"
             />
 
             <input
+                className={styles.input}
                 value={state.email}
                 onChange={(e) => dispatch(changeEmail(e.target.value))}
-                placeholder="email"
+                placeholder="Email"
             />
 
             <input
+                className={styles.input}
+                type="password"
                 value={state.password}
                 onChange={(e) => dispatch(changePassword(e.target.value))}
-                placeholder="password"
+                placeholder="Password"
             />
 
-            <button>submit</button>
+            <button className={styles.button}>Signup</button>
         </form>
-    </>
+    </div>
+</>
     );
 }

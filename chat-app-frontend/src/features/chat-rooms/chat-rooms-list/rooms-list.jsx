@@ -1,47 +1,43 @@
 import { useEffect, useState } from "react"
 import { getRoomsAPI } from "../../../apis/api";
+import styles from './rooms-list.module.css';
 
-export default function RoomsList(){
+export default function RoomsList({ setIsRoomSelected, setRoomId ,setRoomName}) {
 
-    const [rooms,setRooms] = useState([]);
+    const [rooms, setRooms] = useState([]);
+    const [activeRoom, setActiveRoom] = useState(null);
 
     const getRooms = async () => {
-        const res = await getRoomsAPI();
-        try{
-            console.log(res.data);
+        try {
+            const res = await getRoomsAPI();
             setRooms(res.data);
-        }catch(e){
+        } catch (e) {
             console.error(e);
         }
-    }
+    };
 
-    useEffect(()=>{
+    const showSelectedRoom = (roomId,roomName) => {
+        setIsRoomSelected(true);
+        setRoomId(roomId);
+        setRoomName(roomName);
+        setActiveRoom(roomId);
+    };
+
+    useEffect(() => {
         getRooms();
-    },[])
+    }, []);
 
     return (
-        <>
-           {/* <li>
-            <ol>room 1</ol>
-            <ol>room 2</ol>
-            <ol>room 3</ol>
-            <ol>room 4</ol>
-            <ol>room 5</ol>
-            <ol>room 6</ol>
-            <ol>room 7</ol>
-            <ol>room 8</ol>
-            <ol>room 9</ol>
-            <ol>room 10</ol>
-           </li> */}
-
-           <ol>
-            {
-                rooms.map(({id,roomName,roomType})=>(
-                    <li key={id}>{roomName}</li>
-                ))
-            }
-           </ol>
-
-        </>
-    )
+        <ol className={styles.rooms}>
+            {rooms.map(({ id, roomName }) => (
+                <li
+                    key={id}
+                    onClick={() => showSelectedRoom(id,roomName)}
+                    className={activeRoom === id ? styles.activeRoom : ""}
+                >
+                    {roomName}
+                </li>
+            ))}
+        </ol>
+    );
 }

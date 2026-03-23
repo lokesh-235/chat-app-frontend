@@ -1,0 +1,24 @@
+/* 🌞 LIGHT MODE (default) */
+:root {
+    --bg: #e0e0e0;
+    --text: #333;
+
+    --shadow-dark: #bebebe;
+    --shadow-light: #ffffff;
+}
+
+/* 🌙 DARK MODE */
+body.dark {
+    --bg: #1e1e1e;
+    --text: #f1f1f1;
+
+    --shadow-dark: #121212;
+    --shadow-light: #2a2a2a;
+}
+
+/* smooth transition */
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease;
+}

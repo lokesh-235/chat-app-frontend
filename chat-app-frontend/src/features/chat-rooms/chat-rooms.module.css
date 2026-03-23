@@ -1,0 +1,60 @@
+/* Main layout */
+.chats {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+
+    height: 100vh;
+    overflow: hidden;
+
+    background: #e0e0e0;
+}
+
+/* Left Panel (Sidebar) */
+.leftPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    padding: 15px;
+
+    background: #e0e0e0;
+
+    /* 🔥 inset panel */
+    box-shadow: 
+        inset 6px 6px 12px #bebebe,
+        inset -6px -6px 12px #ffffff;
+
+    border-radius: 0 16px 16px 0;
+}
+
+/* Empty state (no room selected) */
+.emptyState {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    color: #666;
+
+    background: #e0e0e0;
+
+    /* 🔥 soft raised */
+    box-shadow: 
+        6px 6px 12px #bebebe,
+        -6px -6px 12px #ffffff;
+
+    margin: 20px;
+    border-radius: 16px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .chats {
+        grid-template-columns: 1fr;
+    }
+
+    .leftPanel {
+        border-radius: 0;
+        padding: 10px;
+    }
+}

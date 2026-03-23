@@ -1,0 +1,78 @@
+/* Main container */
+.chatRoom {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    height: 100dvh;
+    overflow: hidden;
+
+    background: #e0e0e0;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 16px;
+
+    background: #e0e0e0;
+    color: #333;
+
+    border-radius: 0 0 16px 16px;
+
+    /* 🔥 Raised neumorphism */
+    box-shadow: 
+        4px 4px 10px #bebebe,
+        -4px -4px 10px #ffffff;
+
+    z-index: 10;
+}
+
+/* Room title */
+.header h3 {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Back button */
+.backButton {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    background: #e0e0e0;
+    color: #333;
+
+    /* 🔥 Raised button */
+    box-shadow: 
+        3px 3px 6px #bebebe,
+        -3px -3px 6px #ffffff;
+
+    transition: all 0.2s ease;
+}
+
+/* Click effect */
+.backButton:active {
+    box-shadow: 
+        inset 3px 3px 6px #bebebe,
+        inset -3px -3px 6px #ffffff;
+}
+
+/* Hide back button on desktop */
+.chatRoom .backButton {
+    display: none;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .chatRoom .backButton {
+        display: block;
+    }
+
+    .header {
+        padding: 10px;
+    }
+}

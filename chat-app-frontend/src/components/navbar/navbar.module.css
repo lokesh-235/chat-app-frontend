@@ -1,7 +1,66 @@
-.navbar{
-    border: 2px solid black;
-    width: 95vw;
-    margin: auto;
+/* Navbar container */
+.navbar {
     display: flex;
     justify-content: space-around;
+    gap: 20px;
+
+    padding: 15px;
+
+    background: #e0e0e0;
+
+    /* 🔥 soft raised effect */
+    box-shadow: 
+        4px 4px 8px #bebebe,
+        -4px -4px 8px #ffffff;
+}
+
+/* Links */
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+
+    padding: 8px 16px;
+    border-radius: 10px;
+
+    background: #e0e0e0;
+
+    /* 🔥 button style */
+    box-shadow: 
+        3px 3px 6px #bebebe,
+        -3px -3px 6px #ffffff;
+
+    transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+    transform: translateY(-2px);
+}
+
+/* Click (pressed) */
+.navbar a:active {
+    box-shadow: 
+        inset 3px 3px 6px #bebebe,
+        inset -3px -3px 6px #ffffff;
+}
+
+/* Active link highlight */
+.active {
+    box-shadow: 
+        inset 3px 3px 6px #bebebe,
+        inset -3px -3px 6px #ffffff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
 }

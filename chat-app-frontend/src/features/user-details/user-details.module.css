@@ -1,0 +1,86 @@
+/* Container */
+.container {
+    position: relative;
+    padding: 10px;
+}
+
+/* Neumorphic Avatar */
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+
+    /* 🔥 Neumorphism */
+    box-shadow: 
+        6px 6px 12px #bebebe,
+        -6px -6px 12px #ffffff;
+    transition: all 0.2s ease;
+}
+
+.avatar:active {
+    box-shadow: 
+        inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
+}
+
+/* Dropdown Card */
+.dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #e0e0e0;
+    border-radius: 12px;
+    padding: 15px;
+    min-width: 220px;
+    z-index: 100;
+
+    /* 🔥 Neumorphism */
+    box-shadow: 
+        8px 8px 16px #bebebe5d,
+        -8px -8px 16px #ffffff;
+}
+
+/* Text */
+.text {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Label */
+.label {
+    font-weight: bold;
+}
+
+/* Logout Button */
+.logoutBtn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background: #e0e0e0;
+    cursor: pointer;
+    font-weight: 500;
+
+    /* 🔥 Neumorphism */
+    box-shadow: 
+        4px 4px 8px #bebebe,
+        -4px -4px 8px #ffffff;
+
+    transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+    box-shadow: 
+        inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
+}

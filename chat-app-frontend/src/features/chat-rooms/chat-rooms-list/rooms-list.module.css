@@ -1,0 +1,81 @@
+/* Sidebar container */
+.rooms {
+    display: grid;
+    grid-auto-rows: min-content;
+    gap: 12px;
+
+    padding: 15px;
+    margin: 0;
+
+    list-style: none;
+
+    background: #e0e0e0;
+    color: #333;
+
+    overflow-y: auto;
+    height: 100vh;
+
+    position: sticky;
+    top: 0;
+
+    min-height: 0;
+
+    /* 🔥 inset panel */
+    box-shadow: 
+        inset 6px 6px 12px #bebebe,
+        inset -6px -6px 12px #ffffff;
+
+    border-radius: 16px;
+}
+
+/* Each room */
+.rooms li {
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+
+    background: #e0e0e0;
+
+    /* 🔥 raised card */
+    box-shadow: 
+        4px 4px 8px #bebebe,
+        -4px -4px 8px #ffffff;
+
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+.rooms li:hover {
+    transform: scale(1.03);
+}
+
+/* Active (selected room) */
+.activeRoom {
+    box-shadow: 
+        inset 4px 4px 8px #bebebe,
+        inset -4px -4px 8px #ffffff;
+}
+
+/* Scrollbar */
+.rooms::-webkit-scrollbar {
+    width: 6px;
+}
+
+.rooms::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .rooms {
+        height: 100vh;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .rooms li {
+        font-size: 16px;
+        padding: 14px;
+    }
+}
